@@ -1,0 +1,14 @@
+<% @tickets.each do |ticket| %>
+    <div class="entry">
+      <h3><%= ticket.title %></h3>
+      <%= image_tag(ticket.image_url1)  %>
+      <%= image_tag(ticket.image_url2)  %>
+      <%= ticket.time %>
+      <%= ticket.address %>
+      <h3>剩余票数<%= ticket.spurlus_quantity %></h3>
+      <div class="price_line">
+        <span class-"price">售价<%= ticket.price %>元</span>
+        <%= button_to '购买', line_items_path(:ticket_id => ticket) %>
+      </div>
+    </div>
+<% end %>

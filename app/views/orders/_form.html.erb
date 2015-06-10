@@ -1,0 +1,33 @@
+<%= form_for(@order) do |f| %>
+  <% if @order.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@order.errors.count, "error") %> prohibited this order from being saved:</h2>
+
+      <ul>
+      <% @order.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :姓名 %><br>
+    <%= f.text_field :name, :size => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :身份证号码 %><br>
+    <%= f.number_field :sfzhm, :size => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :手机号码 %><br>
+    <%= f.number_field :tel, :size => 40 %>
+  </div>
+  <div class="field">
+    <%= f.label :支付类型 %><br>
+    <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => '选择支付方式' %>
+  </div>
+  <div class="actions">
+    <%= f.submit '提交' %>
+  </div>
+<% end %>

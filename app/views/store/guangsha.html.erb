@@ -1,0 +1,44 @@
+<p>
+  日期
+  <%= link_to "2015年11月11日", store_date1_path %>
+  <%= link_to "2015年11月12日", store_date2_path %>
+  <%= link_to "2015年11月13日", store_date3_path %>
+  <%= link_to "2015年11月14日", store_date4_path %>
+  <%= link_to "2015年11月15日", store_date5_path %>
+</p>
+<p>
+  球队
+  <%= link_to "北京金隅", store_beijing_path %>
+  <%= link_to "上海大鲨鱼", store_shanghai_path %>
+  <%= link_to "东莞马可波罗", store_dongguan_path %>
+  <%= link_to "佛山农商银行", store_foshan_path %>
+  <%= link_to "八一双鹿火箭", store_bayi_path %>
+  <%= link_to "吉林九台农商", store_jilin_path %>
+  <%= link_to "四川金强", store_sichuan_path %>
+  <%= link_to "天津荣钢", store_tianjin_path %>
+  <%= link_to "山东黄金", store_shandon_path %>
+  <%= link_to "广东东莞银行", store_guangdon_path %>
+  <%= link_to "新疆广汇", store_xinjiang_path %>
+  <%= link_to "江苏南钢", store_nangang_path %>
+  <%= link_to "江苏同曦", store_tongxi_path %>
+  <%= link_to "浙江广厦", store_guangsha_path %>
+  <%= link_to "浙江稠州银行", store_zhejiang_path %>
+  <%= link_to "福建泉州银行", store_fujian_path %>
+  <%= link_to "辽宁衡业", store_liaoning_path %>
+  <%= link_to "重庆翱龙", store_chongqing_path %>
+  <%= link_to "青岛双星", store_qingdao_path %>
+</p>
+<% @tickets.each do |ticket| %>
+    <div class="entry">
+      <h3><%= ticket.title %></h3>
+      <%= image_tag(ticket.image_url1)  %>
+      <%= image_tag(ticket.image_url2)  %>
+      <%= ticket.time %>
+      <%= ticket.address %>
+      <h3>剩余票数<%= ticket.spurlus_quantity %></h3>
+      <div class="price_line">
+        <span class-"price">售价<%= ticket.price %>元</span>
+        <%= button_to '购买', line_items_path(:ticket_id => ticket) %>
+      </div>
+    </div>
+<% end %>

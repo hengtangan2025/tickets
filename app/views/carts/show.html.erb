@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<div class="cart_title">订票清单</div>
+<table>
+  <% @cart.line_items.each do |item| %>
+    <tr> 
+      <td><%= item.quantity %> &times;</td>
+      <td><%= item.ticket.title %></td>
+      <td class ="item_price"><%= item.total_price %></td>
+    </tr>
+  <% end %>
+
+  <tr class="tatal_line">
+    <td colspan="2">Total</td>
+    <td class="total_cell"><%= @cart.total_price %></td>
+  </tr>
+</table>
+<%= button_to '付款', new_order_path, :method => :get %>
+<%= button_to '清空',@cart, :method => :delete, 
+  :confirm => 'Are you sure?' %>
+

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  sfzhm: 1
+  tel: 1
+  pay_type: MyString
+
+two:
+  name: MyString
+  sfzhm: 1
+  tel: 1
+  pay_type: MyString

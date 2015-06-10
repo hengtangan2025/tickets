@@ -1,0 +1,27 @@
+<div class="Tickets_form">
+  <% if flash[:alert] %>
+  <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag action="/login" do |f| %>
+    <fieldset>
+      <legend>请输入账号和密码</legend>
+
+      <div>
+        <label for="zhanghao">账号:</label>
+        <%= text_field_tag :zhanghao, params[:zhanghao] %>
+      </div>
+      <div>
+        <label for="password">密码:</label>
+        <%= password_field_tag :password, params[:password] %>
+      </div>
+
+      <div>
+        <%= submit_tag "登陆" %>
+      </div>
+      <div>
+        未注册用户？<%= link_to "注册", new_user_path %>
+    </fieldset>
+  <% end %>
+</div>

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  用户<%= @user.name %> 您好
+</p>
+<p>
+  <%= link_to "预定球票", store_index_path %>
+</p>
+<p>
+  <%= link_to "未完成订单", carts_path %>
+</p>
+<p>
+  <%= link_to "已完成订单", order_path %>
+</p>
