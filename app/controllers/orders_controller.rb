@@ -14,11 +14,11 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @cart = current_cart
-    if @cart.line_items.empty?
-      redirect_to store_index_path, :notice => "订票清单已清空"
-      return
-    end
+    # @cart = current_cart
+    # if @cart.line_items.empty?
+    #   redirect_to store_index_path, :notice => "订票清单已清空"
+    #   return
+    # end
     @order = Order.new
 
     respond_to do |format|
@@ -35,7 +35,6 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
-
     respond_to do |format|
       if @order.save
         format.html { redirect_to @order, notice: 'Order was successfully created.' }
@@ -66,7 +65,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to orders_url, notice: '订单以删除.' }
       format.json { head :no_content }
     end
   end

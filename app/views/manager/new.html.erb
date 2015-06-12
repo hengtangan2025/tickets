@@ -1,0 +1,21 @@
+<div class="Tickets_form">
+  <% if flash[:alert] %>
+  <p id="notice"><%= flash[:alert] %></p>
+  <% end %>
+
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag action="/manager/create" do |f| %>
+    <fieldset>
+      <legend>请输入密码</legend>
+
+      <div>
+        <label for="password">密码:</label>
+        <%= password_field_tag :password, params[:password] %>
+      </div>
+
+      <div>
+        <%= submit_tag "登陆" %>
+      </div>
+    </fieldset>
+  <% end %>
+</div>

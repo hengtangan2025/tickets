@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150610070018) do
+ActiveRecord::Schema.define(version: 20150612061415) do
+
+  create_table "administrators", force: :cascade do |t|
+    t.string   "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -26,12 +32,13 @@ ActiveRecord::Schema.define(version: 20150610070018) do
     t.datetime "updated_at",             null: false
     t.integer  "quantity",   default: 1
     t.integer  "order_id"
+    t.integer  "user_id"
   end
 
   create_table "orders", force: :cascade do |t|
     t.string   "name"
-    t.integer  "sfzhm"
-    t.integer  "tel"
+    t.string   "sfzhm"
+    t.string   "tel"
     t.string   "pay_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -65,11 +72,12 @@ ActiveRecord::Schema.define(version: 20150610070018) do
     t.string   "name"
     t.string   "password"
     t.string   "password_confirmation"
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "zhanghao"
     t.string   "password_digest"
     t.string   "remember_digest"
+    t.float    "money",                 default: 0.0
   end
 
 end

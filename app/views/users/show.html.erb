@@ -3,6 +3,8 @@
 <p>
   用户<%= @user.name %> 您好
 </p>
+  <!-- 账户余额<%= @money %>
+  <%= link_to "充值", chongzhi_new_path %> -->
 <p>
   <%= link_to "预定球票", store_index_path %>
 </p>
@@ -10,5 +12,5 @@
   <%= link_to "未完成订单", carts_path %>
 </p>
 <p>
-  <%= link_to "已完成订单", order_path %>
+  <%= link_to "已完成订单", orders_path %>
 </p>

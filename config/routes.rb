@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
   
 
+  get 'chongzhi/new'
+  get 'chongzhi/create'
+  get 'manager/new'
+  post 'manager/create'
+  resources :administrators
   get "store/index"
   get "store/date1"
   get "store/date2"
@@ -42,7 +47,7 @@ Rails.application.routes.draw do
 
   resources :tickets
 
-  root 'users#index'
+  root 'store#zhuye'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

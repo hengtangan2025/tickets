@@ -1,5 +1,5 @@
 class Cart < ActiveRecord::Base
-  has_many :line_items, :dependent => :destroy
+  has_many :line_items , :dependent => :destroy
   def add_ticket(ticket_id)
     current_item = line_items.find_by_ticket_id(ticket_id)
     if current_item

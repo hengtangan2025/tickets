@@ -29,10 +29,9 @@ class LineItemsController < ApplicationController
     @line_item = @cart.line_items.build
     @line_item.ticket = ticket
     @line_item = @cart.add_ticket(ticket.id)
-
     respond_to do |format|
       if @line_item.save
-        format.html { redirect_to @line_item.cart, notice: 'Line item was successfully created.' }
+        format.html { redirect_to @line_item.cart, notice: '已加入订单.' }
         format.json { render :show, status: :created, location: @line_item }
       else
         format.html { render :new }

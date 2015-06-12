@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tickets</h1>
+<h1>球票列表</h1>
 
 <table>
   <thead>
@@ -26,9 +26,9 @@
         <td><%= ticket.address %></td>
         <td><%= ticket.spurlus_quantity %></td>
         <td><%= ticket.price %></td>
-        <td><%= link_to 'Show', ticket %></td>
-        <td><%= link_to 'Edit', edit_ticket_path(ticket) %></td>
-        <td><%= link_to 'Destroy', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '查看', ticket %></td>
+        <td><%= link_to '修改信息', edit_ticket_path(ticket) %></td>
+        <td><%= link_to '删除', ticket, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -36,4 +36,4 @@
 
 <br>
 
-<%= link_to 'New Ticket', new_ticket_path %>
+<%= link_to '添加球票', new_ticket_path %>

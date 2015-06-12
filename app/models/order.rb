@@ -1,3 +1,3 @@
 class Order < ActiveRecord::Base
-  PAYMENT_TYPES = [ "支付宝", "网上银行", "信用卡" ]
+  PAYMENT_TYPES = [ "邮寄", "自取" ]
 end

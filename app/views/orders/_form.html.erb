@@ -13,20 +13,21 @@
 
   <div class="field">
     <%= f.label :姓名 %><br>
-    <%= f.text_field :name, :size => 40 %>
+    <%= f.text_field :name, :size => 20 %>
   </div>
   <div class="field">
-    <%= f.label :身份证号码 %><br>
-    <%= f.number_field :sfzhm, :size => 40 %>
+    <%= f.label :联系地址 %><br>
+    <%= f.text_field :sfzhm, :size => 20 %>
   </div>
   <div class="field">
     <%= f.label :手机号码 %><br>
-    <%= f.number_field :tel, :size => 40 %>
+    <%= f.text_field :tel, :size => 20 %>
   </div>
   <div class="field">
-    <%= f.label :支付类型 %><br>
-    <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => '选择支付方式' %>
+    <%= f.label :取票方式 %><br>
+    <%= f.select :pay_type, Order::PAYMENT_TYPES, :prompt => '选择取票方式' %>
   </div>
+  <%= hidden_field_tag 'order[user_id]',session[:user_id] %>
   <div class="actions">
     <%= f.submit '提交' %>
   </div>
