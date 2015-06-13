@@ -29,8 +29,10 @@ class LineItemsController < ApplicationController
     @line_item = @cart.line_items.build
     @line_item.ticket = ticket
     @line_item = @cart.add_ticket(ticket.id)
+    @num = Ticket.find(params[:ticket_id]).surplus_quantity
     respond_to do |format|
       if @line_item.save
+        @num -= @line_item.quantity
         format.html { redirect_to @line_item.cart, notice: '已加入订单.' }
         format.json { render :show, status: :created, location: @line_item }
       else
